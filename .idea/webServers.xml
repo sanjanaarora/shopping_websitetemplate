@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cb1c3cf1-a6c3-449b-b5c4-3f09740ec4ae" name="shopping_websitetemplate" url="http://localhost/shopping_websitetemplate">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+    </option>
+  </component>
+</project>
