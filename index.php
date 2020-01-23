@@ -20,14 +20,14 @@ include "publicheader.php";
         <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/home1-slide2.jpg">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/kkkk.jpg">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-1">
-                                    <h2 class="slide-title">Family Jewellery <span>Collection</span></h2>
-                                    <h4 class="slide-desc">Designer Jewellery Necklaces-Bracelets-Earings</h4>
-                                    <a href="shop.html" class="btn btn-hero">Read More</a>
+                                    <h2 class="slide-title">Toy <span>Collection</span></h2>
+                                    <h4 class="slide-desc">Small Kids toy collection</h4>
+<!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
                                 </div>
                             </div>
                         </div>
@@ -38,14 +38,14 @@ include "publicheader.php";
 
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/home1-slide3.jpg">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/jjj.jpg">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-2 float-md-right float-none">
-                                    <h2 class="slide-title">Diamonds Jewellery<span>Collection</span></h2>
-                                    <h4 class="slide-desc">Shukra Yogam & Silver Power Silver Saving Schemes.</h4>
-                                    <a href="shop.html" class="btn btn-hero">Read More</a>
+                                    <h2 class="slide-title" style="color: #1DA1F2;background-color: transparent">Stainless Steel<span>Collection</span></h2>
+                                    <h4 class="slide-desc">SAS Metal and all other </h4>
+<!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
                                 </div>
                             </div>
                         </div>
@@ -56,14 +56,14 @@ include "publicheader.php";
 
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/home1-slide1.jpg">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/iiii.jpeg">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-3">
-                                    <h2 class="slide-title">Grace Designer<span>Jewellery</span></h2>
-                                    <h4 class="slide-desc">Rings, Occasion Pieces, Pandora & More.</h4>
-                                    <a href="shop.html" class="btn btn-hero">Read More</a>
+                                    <h2 class="slide-title text-warning">Grace Designer<span>Jewellery</span></h2>
+                                    <h4 class="slide-desc text-primary">Rings, Occasion Pieces, Pandora & More.</h4>
+<!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
                                 </div>
                             </div>
                         </div>

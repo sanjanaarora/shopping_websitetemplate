@@ -84,11 +84,42 @@ include "publicheader.php";
                                         <td class="pro-price"><span>&#8377; <?php echo $item->price; ?></span></td>
                                         <td class="pro-price"><span><?php echo $item->discount; ?>%</span></td>
                                         <td class="pro-price"><span>&#8377; <?php echo $discountedPrice; ?></span></td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty"><input type="text" value="<?php echo $item->qty; ?>">
-                                            </div>
+                                        <td class="text-center" style="width: 13%">
+                                            <form id="myFormQty">
+                                                <div class="input-group" style="">
+                                                <span class="input-group-prepend" style="">
+                                                    <button type="button" data-toggle="tooltip" title="Remove"
+                                                            class="btn btn-info" <?php if ($item->qty > 1) { ?>
+                                                        onclick="changeQty(<?php echo $item->id; ?>,'minus',<?php echo $item->stock ?>)" <?php } ?>><i
+                                                                id="minusicon-<?php echo $item->id; ?>"
+                                                                class="fa fa-minus <?php if ($item->qty <= 1) {
+                                                                    echo "disabled";
+                                                                } ?>"></i></button>
+                                                </span>
+                                                    <input type="text" name="quantity-<?php echo $item->id; ?>"
+                                                           data-rule-required="true" data-rule-min="1"
+                                                           data-rule-max="<?php echo $item->stock ?>"
+                                                           id="quantity-<?php echo $item->id; ?>"
+                                                           value="<?php echo $item->qty; ?>" readonly=""
+                                                           class="form-control text-center mr-1 ml-1">
+                                                    <span class="input-group-append">
+                                                    <button type="button" <?php if ($item->qty < $item->stock) { ?> onclick="changeQty(<?php echo $item->id; ?>,'plus',<?php echo $item->stock ?>)" <?php } ?>
+                                                            data-toggle="tooltip"
+                                                            title="Update" class="btn btn-info"><i
+                                                                id="plusicon-<?php echo $item->id; ?>"
+                                                                class="fa fa-plus <?php if ($item->qty >= $item->stock) {
+                                                                    echo "disabled";
+                                                                } ?>"></i></button>
+                                                </span>
+                                                </div>
+                                            </form>
                                         </td>
-                                        <td class="pro-subtotal"><span>&#8377; <?php echo $netprice; ?></span></td>
+                                        <!--                                        <input type="hidden" value="-->
+                                        <?php //echo $item->id ?><!--" id="productid"-->
+                                        <!--                                               name="productid">-->
+                                        <td class="pro-subtotal"><span>&#8377; <span
+                                                        id="netprice-<?php echo $item->id; ?>"><?php echo $netprice; ?></span></span>
+                                        </td>
                                         <td class="pro-remove"><a href="#"><i class="fas fa-trash-alt text-danger"></i></a>
                                         </td>
                                     </tr>
@@ -112,7 +143,7 @@ include "publicheader.php";
                                     <table class="table">
                                         <tr>
                                             <td>Sub Total</td>
-                                            <td>&#8377; <?php echo $grandTotal; ?></td>
+                                            <td>&#8377; <span id="grandTotal"><?php echo $grandTotal; ?></span></td>
                                         </tr>
                                     </table>
                                 </div>

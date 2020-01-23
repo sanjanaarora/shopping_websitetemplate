@@ -123,7 +123,7 @@ include "publicheader.php";
                                                                             } ?>" name="qty" id="qty"
                                                                             data-rule-required="true" data-rule-min="1"
                                                                             data-msg-max=" " data-msg-min=" "
-                                                                            data-rule-max="<?php echo $product_row['stock'] ?>">
+                                                                            data-rule-max="<?php echo $product_row['stock'];?>">
                                                 </div>
                                             </div>
                                             <div class="action_link">
