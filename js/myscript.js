@@ -30,6 +30,7 @@ function changeQty(productid, type, stock) {
             document.getElementById("plusicon-" + productid).className = "fa fa-plus disabled";
             flag = 0;
         } else {
+            document.getElementById("minusicon-" + productid).className = "fa fa-minus";
             document.getElementById("plusicon-" + productid).className = "fa fa-plus";
             quantity += 1;
         }
