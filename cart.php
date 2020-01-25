@@ -1,5 +1,7 @@
 <?php
 
+ini_set('unserialize_callback_func', 'mycallback'); // set your callback_function
+
 class cart
 {
     public $id, $productname, $price, $discount, $stock, $photo, $qty, $subcat;

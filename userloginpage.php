@@ -48,10 +48,12 @@ include_once 'publicheader.php';
                         <span class="close" data-dismiss="alert">&times;</span>
                             </div>';
         }
-    }
-    include_once 'footer.php';
-    ?>
+    } ?>
 
 </div>
+<?php
+include_once 'footer.php';
+?>
+
 </body>
 </html>

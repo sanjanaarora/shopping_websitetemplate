@@ -1,3 +1,64 @@
+$(document).ready(function () {
+    $("#checkoutForm").validate();
+});
+
+$(document).ready(function () {
+    $("#placeOrder").click(function (e) {
+        var paymentmethod = $("input[name=paymentmethod]:checked").val();
+        if (paymentmethod == "Online") {
+            e.preventDefault();
+            var amount = document.getElementById('grandTotal').value * 100;
+            var options = {
+                "key": "rzp_test_dRWiKHS7zr2Gki",
+                "amount": amount,
+                "name": "",
+                "description": "",
+                "image": "",
+                "handler": function (response) {
+                    //alert(response.razorpay_payment_id);
+                    if (response.razorpay_payment_id == "") {
+                        //alert('Failed');
+                        window.location.href = "add_payment_details.php?status=failed";
+                    } else {
+                        var controls = document.getElementById("checkoutForm").elements;
+                        var formdata = new FormData();
+                        for (var i = 0; i < controls.length; i++) {
+                            if (controls[i].type == "file") {
+                                formdata.append(controls[i].name, controls[i].files[0]);
+                            } else {
+                                formdata.append(controls[i].name, controls[i].value);
+                            }
+                        }
+                        var httpreg = new XMLHttpRequest();
+                        httpreg.onreadystatechange = function () {
+                            if (this.status == 200 && this.readyState == 4) {
+                                var output = this.responseText;
+                                console.log(output);
+                                window.location.href = "thanks.php?q=" + output;
+                            }
+                        };
+                        httpreg.open("POST", "insertPayment.php", true);
+                        httpreg.send(formdata);
+                    }
+                },
+                "prefill": {
+                    "name": "",
+                    "email": ""
+                },
+                "notes": {
+                    "address": ""
+                },
+                "theme": {
+                    "color": "#F37254"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+    })
+});
+
+
 function addToCart(productid, qty = null) {
     if (qty == null) {
         if ($("#myFormQty").valid()) {
@@ -57,9 +118,4 @@ function changeQty(productid, type, stock) {
         xmlhttp.open("GET", "changeQty.php?q=" + productid + "&qty=" + quantity, true);
         xmlhttp.send();
     }
-}
-
-
-function lessqty(productid) {
-
 }

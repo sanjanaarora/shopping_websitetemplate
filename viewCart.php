@@ -23,7 +23,11 @@ if (isset($_SESSION['products'])) {
 <body>
 <!-- Start Header Area -->
 <?php
-include "publicheader.php";
+if (isset($_SESSION["email"])) {
+    include "userheader.php";
+} else {
+    include "publicheader.php";
+}
 ?>
 <!-- end Header Area -->
 
@@ -91,7 +95,7 @@ include "publicheader.php";
                                                 <span class="input-group-prepend" style="">
                                                     <button type="button" data-toggle="tooltip" title="Remove"
                                                             class="btn btn-info"
-                                                        onclick="changeQty(<?php echo $item->id; ?>,'minus',<?php echo $item->stock ?>)" ><i
+                                                            onclick="changeQty(<?php echo $item->id; ?>,'minus',<?php echo $item->stock ?>)"><i
                                                                 id="minusicon-<?php echo $item->id; ?>"
                                                                 class="fa fa-minus <?php if ($item->qty <= 1) {
                                                                     echo "disabled";
@@ -104,7 +108,8 @@ include "publicheader.php";
                                                        value="<?php echo $item->qty; ?>" readonly=""
                                                        class="form-control text-center mr-1 ml-1">
                                                 <span class="input-group-append">
-                                                    <button type="button"  onclick="changeQty(<?php echo $item->id; ?>,'plus',<?php echo $item->stock ?>)"
+                                                    <button type="button"
+                                                            onclick="changeQty(<?php echo $item->id; ?>,'plus',<?php echo $item->stock ?>)"
                                                             data-toggle="tooltip"
                                                             title="Update" class="btn btn-info"><i
                                                                 id="plusicon-<?php echo $item->id; ?>"
@@ -151,7 +156,7 @@ include "publicheader.php";
                                     </table>
                                 </div>
                             </div>
-                            <a href="checkout.html" class="btn btn-sqr d-block">Proceed Checkout</a>
+                            <a href="checkout.php" class="btn btn-sqr d-block">Proceed Checkout</a>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,11 @@ session_start();
 
 <body>
 <?php
-include "publicheader.php";
+if (isset($_SESSION["email"])) {
+    include "userheader.php";
+} else {
+    include "publicheader.php";
+}
 ?>
 <main>
     <!-- hero slider area start -->
@@ -27,7 +31,7 @@ include "publicheader.php";
                                 <div class="hero-slider-content slide-1">
                                     <h2 class="slide-title">Toy <span>Collection</span></h2>
                                     <h4 class="slide-desc">Small Kids toy collection</h4>
-<!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
+                                    <!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
                                 </div>
                             </div>
                         </div>
@@ -43,9 +47,10 @@ include "publicheader.php";
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="hero-slider-content slide-2 float-md-right float-none">
-                                    <h2 class="slide-title" style="color: #1DA1F2;background-color: transparent">Stainless Steel<span>Collection</span></h2>
+                                    <h2 class="slide-title" style="color: #1DA1F2;background-color: transparent">
+                                        Stainless Steel<span>Collection</span></h2>
                                     <h4 class="slide-desc">SAS Metal and all other </h4>
-<!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
+                                    <!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
                                 </div>
                             </div>
                         </div>
@@ -63,7 +68,7 @@ include "publicheader.php";
                                 <div class="hero-slider-content slide-3">
                                     <h2 class="slide-title text-warning">Grace Designer<span>Jewellery</span></h2>
                                     <h4 class="slide-desc text-primary">Rings, Occasion Pieces, Pandora & More.</h4>
-<!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
+                                    <!--                                    <a href="shop.html" class="btn btn-hero">Read More</a>-->
                                 </div>
                             </div>
                         </div>
@@ -128,7 +133,14 @@ include "publicheader.php";
                                         </div>
                                         <div class="cart-hover">
                                             <button class="btn btn-cart"
+                                                <?php if ($product_row['stock'] > 0) { ?>
                                                     onclick="addToCart(<?php echo $product_row[0] ?>,1)">add to cart
+                                                <?php
+                                                }
+                                                else {
+                                                    echo ">Out of Stcok";
+                                                }
+                                                ?>
                                             </button>
                                         </div>
                                     </figure>

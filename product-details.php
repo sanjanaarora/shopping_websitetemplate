@@ -12,7 +12,11 @@ $ar = array();
 
 <body>
 <?php
-include "publicheader.php";
+if (isset($_SESSION["email"])) {
+    include "userheader.php";
+} else {
+    include "publicheader.php";
+}
 ?>
 
 <main>
