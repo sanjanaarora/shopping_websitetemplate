@@ -118,6 +118,8 @@ if (isset($_SESSION["email"])) {
                                     <div class="quantity-cart-box d-flex align-items-center">
                                         <h6 class="option-title">qty:</h6>
                                         <form id="myFormQty">
+                                            <?php if ($product_row['stock'] > 0) { ?>
+
                                             <div class="quantity">
                                                 <div class="pro-qty"><input type="text"
                                                                             value="<?php if (isset($_SESSION['products'])) {
@@ -135,6 +137,12 @@ if (isset($_SESSION["email"])) {
                                                         onclick="addToCart(<?php echo $product_row[0] ?>)">Add to cart
                                                 </button>
                                             </div>
+                                                <?php
+                                            }
+                                            else {
+                                                echo "Out of Stcok";
+                                            }
+                                            ?>
                                         </form>
                                     </div>
 

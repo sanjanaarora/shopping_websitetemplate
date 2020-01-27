@@ -2,7 +2,7 @@
 include "cart.php";
 ?>
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html>
 <head>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <?php
@@ -11,6 +11,7 @@ include "cart.php";
 </head>
 
 <body>
+
 <?php
 include "userheader.php";
 @session_start();
@@ -18,41 +19,42 @@ $cart = $_SESSION['products'];
 //var_dump($cart);
 //print_r($cart);
 ?>
-<form action="insertPayment.php" id="checkoutForm" method="post">
-    <main>
-        <!-- breadcrumb area start -->
-        <div class="breadcrumb-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-wrap">
-                            <nav aria-label="breadcrumb">
-                                <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="shop.html">shop</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">checkout</li>
-                                </ul>
-                            </nav>
-                        </div>
+
+<main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="shop.html">shop</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">checkout</li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- breadcrumb area end -->
+    </div>
+    <!-- breadcrumb area end -->
 
-        <!-- checkout main wrapper start -->
-        <div class="checkout-page-wrapper section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Checkout Login Coupon Accordion Start -->
-                        <div class="checkoutaccordion" id="checkOutAccordion">
+    <!-- checkout main wrapper start -->
+    <div class="checkout-page-wrapper section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Checkout Login Coupon Accordion Start -->
+                    <div class="checkoutaccordion" id="checkOutAccordion">
 
 
-                        </div>
-                        <!-- Checkout Login Coupon Accordion End -->
                     </div>
+                    <!-- Checkout Login Coupon Accordion End -->
                 </div>
+            </div>
+            <form action="insertPayment.php" id="checkoutForm" method="post">
                 <div class="row">
                     <!-- Checkout Billing Details -->
                     <div class="col-lg-6">
@@ -62,16 +64,16 @@ $cart = $_SESSION['products'];
 
 
                                 <div class="single-input-item">
-                                    <label for="streetaddress" class="required mt-20">Street address</label>
+                                    <label for="streetaddress" class=" mt-20">Street address</label>
                                     <textarea id="address" data-rule-required="true"
                                               data-msg-required="Enter a valid address so that we can reach you"
                                               name="address" placeholder="Enter full address"
-                                              required></textarea>
+                                    ></textarea>
                                 </div>
 
 
                                 <div class="single-input-item">
-                                    <label for="city" class="required">Town / City</label>
+                                    <label for="city" class="">Town / City</label>
                                     <select name="city" data-rule-required="true"
                                             data-msg-required="City must be selected" id="town">
                                         <option value="">--Choose City--</option>
@@ -96,11 +98,10 @@ $cart = $_SESSION['products'];
 
 
                                 <div class="single-input-item">
-                                    <label for="postcode" class="required">Postcode / ZIP</label>
+                                    <label for="postcode" class="">Postcode / ZIP</label>
                                     <input type="text" id="zipcode" name="zipcode" data-rule-required="true"
                                            data-msg-required="Please enter a valid zip code or postal code"
-                                           placeholder="Postcode / ZIP"
-                                           required/>
+                                           placeholder="Postcode / ZIP" minlength="6" maxlength="6" data-rule-number="true">
                                 </div>
 
                                 <div class="single-input-item">
@@ -194,30 +195,39 @@ $cart = $_SESSION['products'];
                                     <div class="summary-footer-area">
                                         <div class="custom-control custom-checkbox mb-20">
                                             <input type="checkbox" checked class="custom-control-input" id="terms"
-                                                   required/>
+                                            />
                                             <label class="custom-control-label" for="terms">I have read and agree to
                                                 the website <a href="index.php">terms and conditions.</a></label>
                                         </div>
-                                        <button type="submit" id="placeOrder" class="btn btn-sqr">Place Order</button>
+                                        <!--                                        <button type="submit" id="placeOrder" class="btn btn-sqr">Place Order</button>-->
+                                        <input type="submit" value="Place Order" class="btn btn-sqr">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-        <!-- checkout main wrapper end -->
-    </main>
-
-    <!-- Scroll to top start -->
-    <div class="scroll-top not-visible">
-        <i class="fa fa-angle-up"></i>
     </div>
-</form>
+    <!-- checkout main wrapper end -->
+</main>
+
+<!-- Scroll to top start -->
+<div class="scroll-top not-visible">
+    <i class="fa fa-angle-up"></i>
+</div>
+
 <!-- Scroll to Top End -->
 <?php
 include "footer.php";
 ?>
+<script src="dist/jquery.validate.js"></script>
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        $("#checkoutForm").validate();-->
+<!---->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>

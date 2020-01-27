@@ -27,8 +27,8 @@ if (isset($_SESSION['products'])) {
     }
 }
 $currentDateTime = date('Y-m-d H:i:s');
-$sql = "INSERT INTO `bill`(`id`, `grandtotal`, `datetime`, `paymentmethod`, `city`, `zipcode`, `address`, `remarks`, `email`) 
-VALUES (null ,'$grandTotal','" . $currentDateTime . "','$paymentmethod','$city','$zipcode','$address','$remarks','$email')";
+$sql = "INSERT INTO `bill`(`id`, `grandtotal`, `datetime`, `paymentmethod`, `city`, `zipcode`, `address`, `remarks`,`status`, `email`) 
+VALUES (null ,'$grandTotal','" . $currentDateTime . "','$paymentmethod','$city','$zipcode','$address','$remarks','pending','$email')";
 mysqli_query($conn, $sql);
 
 $billid = $conn->insert_id;

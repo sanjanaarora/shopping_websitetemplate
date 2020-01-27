@@ -252,9 +252,7 @@
 <!-- jQuery JS -->
 
 <!-- Popper JS -->
-<script src="assets/js/vendor/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="assets/js/vendor/bootstrap.min.js"></script>
+
 <!-- slick Slider JS -->
 <script src="assets/js/plugins/slick.min.js"></script>
 <!-- Countdown JS -->

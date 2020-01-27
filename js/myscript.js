@@ -2,6 +2,7 @@ $(document).ready(function () {
     $("#checkoutForm").validate();
 });
 
+
 $(document).ready(function () {
     $("#placeOrder").click(function (e) {
         var paymentmethod = $("input[name=paymentmethod]:checked").val();
@@ -36,6 +37,7 @@ $(document).ready(function () {
                                 console.log(output);
                                 window.location.href = "thanks.php?q=" + output;
                             }
+
                         };
                         httpreg.open("POST", "insertPayment.php", true);
                         httpreg.send(formdata);
