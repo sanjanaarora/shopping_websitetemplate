@@ -131,6 +131,10 @@ include "connection.php";
                                             <i class="pe-7s-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
+                                            <li><a class="dropdown-item" href="userhome.php">My Account</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="myorder.php">My Orders</a>
+                                            </li>
                                             <li><a class="dropdown-item" href="userchangepassword.php">Change
                                                     Password</a>
                                             </li>
@@ -141,7 +145,7 @@ include "connection.php";
 
                                     <li>
                                         <a href="viewCart.php" class="minicart-btn">
-                                            <i class="pe-7s-shopbag"></i>
+                                            <i class="pe-7s-cart"></i>
                                             <div class="notification" id="cartCount">
                                                 <?php
                                                 if (isset($_SESSION['products'])) {

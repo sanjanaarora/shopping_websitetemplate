@@ -72,6 +72,17 @@ if (isset($_SESSION["username"])) {
                 </div>
             </li>
             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#orders" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    All Orders
+                </a>
+                <div id="orders" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="vieworder.php">View Orders</a>
+<!--                    <a class="dropdown-item" href="showproduct.php">View Product</a>-->
+                </div>
+            </li>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#user" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">

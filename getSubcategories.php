@@ -29,8 +29,7 @@ if (mysqli_num_rows($result) > 0) {
                 <td><a onclick="return confirm('Are you Sure you want to Delete?')"
                        href="deletesubcategory.php?subcatid=<?php echo $category[0]; ?>"><i class="fa fa-trash"></i></a>
                 </td>
-                <td><a href="editsubcategory.php?subcatid=<?php echo $category[0]; ?>"><i
-                                class="fa fa-user-edit"></i></a>
+                <td><a href="editsubcategory.php?subcatid=<?php echo $category[0]; ?>"><i class="fa fa-user-edit"></i></a>
                 </td>
             </tr>
             <?php
