@@ -200,7 +200,7 @@ $cart = $_SESSION['products'];
                                                 the website <a href="index.php">terms and conditions.</a></label>
                                         </div>
                                         <!--                                        <button type="submit" id="placeOrder" class="btn btn-sqr">Place Order</button>-->
-                                        <input type="submit" value="Place Order" class="btn btn-sqr">
+                                        <input type="submit" value="Place Order" id="placeOrder" class="btn btn-sqr">
                                     </div>
                                 </div>
                             </div>

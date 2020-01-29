@@ -26,6 +26,7 @@ include_once 'userheader.php';
             <th>Grand Total</th>
             <th>Status</th>
             <th>View Detail</th>
+            <th>Cancel Order</th>
         </tr>
         </thead>
         <tbody>
@@ -45,6 +46,16 @@ include_once 'userheader.php';
                 <td><?php echo $bill["grandtotal"]; ?></td>
                 <td><?php echo $bill["status"]; ?></td>
                 <td><a href="billdetail.php?q=<?php echo $bill["id"];?>"><i class="fa fa-s15 fa-info-circle"></i></a></td>
+                <?php
+                if ($bill["status"] != "pending") {
+
+                }
+                else{
+                    ?>
+                    <td><a href="cancelorder.php?q=<?php echo $bill["id"];?>">Cancel Order &times;</a></td>
+                    <?php
+                }
+                ?>
             </tr>
             <?php
         }

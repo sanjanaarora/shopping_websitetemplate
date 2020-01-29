@@ -45,8 +45,8 @@
                                     <ul class="dropdown">
                                         <li><a href="userloginpage.php">Login</a></li>
                                         <li><a href="signup.php">Register</a></li>
-                                        <li><a href="about-us.html">about us</a></li>
-                                        <li><a href="contact-us.html">contact us</a></li>
+                                        <li><a href="about-us.php">about us</a></li>
+                                        <li><a href="contact-us.php">contact us</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -80,7 +80,7 @@
                                 ?>
                             </ul>
                         </li>
-                        <li><a href="contact-us.html">Contact us</a></li>
+                        <li><a href="contact-us.php">Contact us</a></li>
                     </ul>
                 </nav>
                 <!-- mobile menu navigation end -->

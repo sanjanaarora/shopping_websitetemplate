@@ -94,7 +94,7 @@ include "connection.php";
                                                 ?>
                                             </ul>
                                         </li>
-                                        <li><a href="contact-us.html">Contact us</a></li>
+                                        <li><a href="contact-us.php">Contact us</a></li>
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->

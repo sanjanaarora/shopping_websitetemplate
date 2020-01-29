@@ -45,16 +45,7 @@ include_once 'userheader.php';
                 <td><?php echo $detail["quantity"]; ?></td>
                 <td><?php echo $detail["netprice"]; ?></td>
                 <td><img src="<?php echo $detail["photo"]; ?>" style="height: 90px;width: 90px" alt=""></td>
-                <?php
-                if ($detail["status"] != "pending") {
-                    echo 2;
-                }
-                else{
-                    ?>
-                    <td><a href="cancelorder.php?q=<?php echo $detail["billid"];?>">Cancel Order &times;</a></td>
-                    <?php
-                }
-                ?>
+
             </tr>
             <?php
         }

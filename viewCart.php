@@ -18,6 +18,12 @@ if (isset($_SESSION['products'])) {
     <?php
     include "headerfiles.html";
     ?>
+    <style>
+        .cartspace{
+            margin: 0px !important;;
+            /*padding: 0px !important;*/
+        }
+    </style>
 </head>
 
 <body>
@@ -90,33 +96,36 @@ if (isset($_SESSION["email"])) {
                                         <td class="pro-price"><span>&#8377; <?php echo $item->price; ?></span></td>
                                         <td class="pro-price"><span><?php echo $item->discount; ?>%</span></td>
                                         <td class="pro-price"><span>&#8377; <?php echo $discountedPrice; ?></span></td>
-                                        <td class="text-center" style="width: 13%">
-                                            <div class="input-group" style="">
-                                                <span class="input-group-prepend" style="">
+                                        <td class="text-center " >
+                                            <div class="form-inline">
+
+                                            <strong  style="font-size: 25px;text-align: center;margin-top: 13px;font-weight: bold;color: #73543F;padding: 0px;">
+
                                                     <button type="button" data-toggle="tooltip" title="Remove"
-                                                            class="btn btn-info"
+                                                            class="btn btn-info cartspace"
                                                             onclick="changeQty(<?php echo $item->id; ?>,'minus',<?php echo $item->stock ?>)"><i
                                                                 id="minusicon-<?php echo $item->id; ?>"
                                                                 class="fa fa-minus <?php if ($item->qty <= 1) {
                                                                     echo "disabled";
                                                                 } ?>"></i></button>
-                                                </span>
-                                                <input type="text" name="quantity-<?php echo $item->id; ?>"
+
+                                                <input type="text" name="quantity-<?php echo $item->id; ?>" style="max-width: 60px;margin: 0px;padding: 0px;"
                                                        data-rule-required="true" data-rule-min="1"
                                                        data-rule-max="<?php echo $item->stock ?>"
                                                        id="quantity-<?php echo $item->id; ?>"
                                                        value="<?php echo $item->qty; ?>" readonly=""
-                                                       class="form-control text-center mr-1 ml-1">
-                                                <span class="input-group-append">
+                                                       class="form-control text-center  cartspace">
+
                                                     <button type="button"
                                                             onclick="changeQty(<?php echo $item->id; ?>,'plus',<?php echo $item->stock ?>)"
                                                             data-toggle="tooltip"
-                                                            title="Update" class="btn btn-info"><i
+                                                            title="Update" class="btn btn-info cartspace"><i
                                                                 id="plusicon-<?php echo $item->id; ?>"
                                                                 class="fa fa-plus <?php if ($item->qty >= $item->stock) {
                                                                     echo "disabled";
                                                                 } ?>"></i></button>
-                                                </span>
+
+                                            </strong>
                                             </div>
                                         </td>
                                         <!--                                        <input type="hidden" value="-->

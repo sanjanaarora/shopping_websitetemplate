@@ -1,36 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View Orders</title>
+    <?php
+    include_once 'headerfiles.html';
+    ?>
+</head>
+<body>
 <?php
 include_once 'adminheader.php';
-date_default_timezone_set("Asia/Kolkata");
+?>
+<div class="container">
+    <?php
+    $billid = $_GET["q"];
+    $fullname = $_GET["r"];
+    $mobile = $_GET["s"];
+    ?>
+    <form action="orderreceivedaction.php" method="post">
+        <div class="row col-sm-6">
+            <label for="person">Order received by: </label>
+        </div>
+        <div class="row col-sm-6">
+            <input type="text" name="person" id="person" class="form-control">
+        </div>
+        <div class="row col-sm-6 justify-content-end mt-4">
+            <input type="hidden" value="<?php echo $billid; ?>" class="form-control" name="billid" id="billid">
+            <input type="hidden" value="<?php echo $fullname; ?>" class="form-control" name="fullname" id="fullname">
+            <input type="hidden" value="<?php echo $mobile; ?>" class="form-control" name="mobile" id="mobile">
 
-$billid = $_POST["billid"];
-$person = $_POST["person"];
-$fullname = $_POST["fullname"];
-$currentDateTime = date('Y-m-d H:i:s');
+            <input type="submit" name="" id="" value="Add" class="w-50 h-100 btn btn-success text-primary">
+        </div>
+    </form>
 
-$update = "UPDATE `bill` SET status='delievered', personreceived='$person' WHERE `id`='$billid'";
-$msg = "Dear " . $fullname . ",\nYour Order is received by .\n " . $person . "\n receiving Date/Time " . $currentDateTime;
-
-if (mysqli_query($conn, $update)) {
-    echo "Update Success";
-    $ch = curl_init();
-    $mobile = $_POST["mobile"];
-
-    $message = urlencode($msg);
-    curl_setopt($ch, CURLOPT_URL, "http://server1.vmm.education/VMMCloudMessaging/AWS_SMS_Sender?");
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS,
-        "username=JulyBatchPHP2019&password=PHFDUD2Y&message=" . $message . "&phone_numbers=" . $mobile);
-
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    print_r($ch);
-    $server_output = curl_exec($ch);
-
-    curl_close($ch);
-
-
-    header("location:vieworder.php");
-} else {
-    echo "Update Failed";
-    header("location:vieworder.php");
-}
-
+    <?php
+    include_once 'footer.php';
+    ?>
+</div>
+</body>
+</html>
+<?php

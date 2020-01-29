@@ -79,7 +79,7 @@ include "connection.php";
                                                         class="fa fa-angle-down"></i></a>
                                             <ul class="megamenu dropdown">
                                                 <?php
-                                                $category = "SELECT * FROM `category` order by categoryname DESC LIMIT 0,4";
+                                                $category = "SELECT * FROM `category` order by categoryname ASC LIMIT 0,4";
                                                 $category_result = mysqli_query($conn, $category);
                                                 while ($category_row = mysqli_fetch_array($category_result)) {
                                                     ?>
@@ -103,7 +103,8 @@ include "connection.php";
                                                 ?>
                                             </ul>
                                         </li>
-                                        <li><a href="contact-us.html">Contact us</a></li>
+                                        <li><a href="contact-us.php">Contact us</a></li>
+                                        <li><a href="about-us.php">About us</a></li>
                                     </ul>
                                 </nav>
                                 <!-- main menu navbar end -->
