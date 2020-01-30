@@ -20,7 +20,7 @@ include_once 'publicheader.php';
             <h1 class="text-primary">Login Here</h1>
             <hr>
         </div>
-        <form action="userchecklogin.php" method="post">
+        <form action="userchecklogin.php" id="form1" method="post">
             <div class="row col-sm-6 offset-3">
                 <div class="input-container">
                     <i class="fa fa-user icon"></i>

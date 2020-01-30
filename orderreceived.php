@@ -20,7 +20,7 @@ include_once 'adminheader.php';
     $fullname = $_GET["r"];
     $mobile = $_GET["s"];
     ?>
-    <form action="orderreceivedaction.php" method="post">
+    <form action="orderreceivedaction.php" id="for1" method="post">
         <div class="row col-sm-6">
             <label for="person">Order received by: </label>
         </div>

@@ -15,7 +15,7 @@
     <script>
         $(function () {
             $("#accordion").accordion({
-                animate: 500
+                animate: 100
             });
         });
     </script>
