@@ -1,6 +1,8 @@
 <?php
 include_once 'cart.php';
-include_once 'adminheader.php';
+
+include_once 'connection.php';
+include_once 'userheader.php';
 if (isset($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
@@ -8,19 +10,33 @@ if (isset($_SESSION["email"])) {
     $user_result = mysqli_query($conn, $user);
     $user_row = mysqli_fetch_array($user_result);
 }
+
 date_default_timezone_set("Asia/Kolkata");
 $billid = $_POST["billid"];
+$qty = $_POST["qty"];
 $remarks = $_POST["remarks"];
-$fullname = $user_row["fullname"];
 $currentDateTime = date('Y-m-d H:i:s');
-$update = "UPDATE `bill` SET status='cancelled', returnremarks = '$remarks' WHERE `id`='$billid'";
-$msg = "Dear " .$fullname  . ",\nYour Order is Cancelled with following reason .\n " . $remarks . "\n Date/Time " . $currentDateTime;
 
-//foreach ($ar as $item) {
-//    $stock = $item->stock + $item->qty;
-//    $update2 = "UPDATE `product` SET `stock`='$stock' WHERE `productid`=" . $item->id;
-//    mysqli_query($conn, $update2);
+//$productid = "select quantity,productid from bill_detail where productid ='$billid'";
+//$billdetailresult = mysqli_query($conn, $productid);
+//$billdetailrow = mysqli_fetch_array($billdetailresult);
+
+$update = "UPDATE `bill` SET status='cancelled', returnremarks = '$remarks' WHERE `id`='$billid'";
+$msg = "Dear " . $user_row["fullname"] . ",\nYour Order is Cancelled with following reason .\n " . $remarks . "\n Date/Time " . $currentDateTime;
+
+
+//foreach ($ar as $billdetailrow) {
+//    $productsql ="select * from product where productid ='$ar[1]'";
+//    $productresult = mysqli_query($conn,$productsql);
+//    $productrow =mysqli_fetch_array($productresult);
+//    $stock = $productrow["stock"] + $qty;
+//    $updatestock = "UPDATE `product` SET `stock`='$stock' WHERE `productid`= '$billdetailrow[1];'";
 //
+//    if (mysqli_query($conn, $updatestock))
+//    {
+//        echo 'update success';
+//    }
+//}
 
 if (mysqli_query($conn, $update)) {
     $ch = curl_init();

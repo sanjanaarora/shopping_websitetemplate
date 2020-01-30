@@ -14,14 +14,14 @@
 <?php
 include 'adminheader.php';
 include_once 'connection.php';
-$username=$_GET['username'];
-$query="select * from admin where username='$username'";
-$result=mysqli_query($conn,$query);
-$row=mysqli_fetch_assoc($result);
+$username = $_GET['username'];
+$query = "select * from admin where username='$username'";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
 //print_r($row);
 ?>
 <div class="container">
-    <form action="updateadmin.php" method="post" enctype="multipart/form-data">
+    <form action="updateadmin.php" method="post" id="form1" enctype="multipart/form-data">
         <div class="row ml-3 justify-content-center">
             <div class="input-containder">
                 <h1 class="text-danger input-field">Edit Your Profile</h1>
@@ -34,7 +34,8 @@ $row=mysqli_fetch_assoc($result);
                 <div class="row">
                     <div class="input-container">
                         <i class="icon fa fa-envelope-square"></i>
-                        <input type="email" value="<?php echo $row['email']; ?>" name="email" id="email" placeholder="enter your email address"
+                        <input type="email" value="<?php echo $row['email']; ?>" name="email" id="email"
+                               placeholder="enter your email address"
                                data-rule-required="true" data-msg-required="Please enter a valid email address"
                                class="input-field">
                     </div>
@@ -46,7 +47,7 @@ $row=mysqli_fetch_assoc($result);
                         <input type="text" name="username" id="username"
                                placeholder="enter username" readonly
                                data-rule-required="true" data-msg-required="Please enter an unique username"
-                               class="input-field" value="<?php echo $row["username"];?>">
+                               class="input-field" value="<?php echo $row["username"]; ?>">
                     </div>
                 </div>
 
@@ -56,7 +57,7 @@ $row=mysqli_fetch_assoc($result);
                         <input type="number" name="mobile" id="mobile"
                                placeholder="enter a valid mobile number"
                                data-rule-required="true" data-msg-required="Please enter a valid mobile number"
-                               class="input-field" minlength="10" maxlength="12" value="<?php echo $row["mobile"]?>">
+                               class="input-field" minlength="10" maxlength="10" value="<?php echo $row["mobile"] ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -65,7 +66,7 @@ $row=mysqli_fetch_assoc($result);
                         <input type="text" name="fullname" id="fullname"
                                placeholder="enter your name"
                                data-rule-required="true" data-msg-required="Please enter name"
-                               class="input-field" value="<?php echo $row['fullname']?>">
+                               class="input-field" value="<?php echo $row['fullname'] ?>">
                     </div>
                 </div>
             </div>

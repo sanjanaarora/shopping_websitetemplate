@@ -11,26 +11,25 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-include_once 'publicheader.php';
-?>
 <div class="container">
     <div class="jumbotron">
         <div class="row offset-3">
             <h1 class="text-primary">Login Here</h1>
             <hr>
         </div>
-        <form action="checklogin.php" method="post">
+        <form action="checklogin.php" method="post" id="form1">.
+
+
             <div class="row col-sm-6 offset-3">
                 <div class="input-container">
                     <i class="fa fa-user icon"></i>
-                    <input class="input-field" type="text" placeholder="enter username" name="username" id="username">
+                    <input class="input-field" type="text" placeholder="enter username" name="username" id="username" data-rule-required="true">
                 </div>
             </div>
             <div class="row justify-content-center col-sm-6 offset-3">
                 <div class="input-container">
                     <i class="fa fa-lock icon"></i>
-                    <input type="password" class="input-field" placeholder="enter password" name="password"
+                    <input type="password" class="input-field" placeholder="enter password" name="password" data-rule-required="true"
                            id="password">
                 </div>
             </div>
@@ -45,6 +44,12 @@ include_once 'publicheader.php';
         if ($val == 1) {
             echo '<div class="alert alert-danger">
                         Password changed successfully
+                        <span class="close" data-dismiss="alert">&times;</span>
+                            </div>';
+        }
+        if ($val == 4) {
+            echo '<div class="alert alert-danger">
+                        Invalid User name password
                         <span class="close" data-dismiss="alert">&times;</span>
                             </div>';
         }

@@ -19,7 +19,6 @@ $categoryname = $_REQUEST['q'];
             ?>
             <option value="<?php echo $category[0]; ?>"><?php echo $category[1]; ?></option>
             <?php
-
         }
         ?>
         <?php

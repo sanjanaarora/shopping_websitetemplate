@@ -116,15 +116,6 @@ include "connection.php";
                     <!-- mini cart area start -->
                     <div class="col-lg-4">
                         <div class="header-right d-flex align-items-center justify-content-xl-between justify-content-lg-end">
-                            <div class="header-search-container">
-                                <button class="search-trigger d-xl-none d-lg-block"><i class="pe-7s-search"></i>
-                                </button>
-                                <form class="header-search-box d-lg-none d-xl-block animated jackInTheBox">
-                                    <input type="text" placeholder="Search entire store hire"
-                                           class="header-search-field">
-                                    <button class="header-search-btn"><i class="pe-7s-search"></i></button>
-                                </form>
-                            </div>
                             <div class="header-configure-area">
                                 <ul class="nav justify-content-end">
                                     <li class="user-hover">
@@ -132,8 +123,8 @@ include "connection.php";
                                             <i class="pe-7s-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a class="dropdown-item" href="userhome.php">My Account</a>
-                                            </li>
+<!--                                            <li><a class="dropdown-item" href="userhome.php">My Account</a>-->
+<!--                                            </li>-->
                                             <li><a class="dropdown-item" href="myorder.php">My Orders</a>
                                             </li>
                                             <li><a class="dropdown-item" href="userchangepassword.php">Change

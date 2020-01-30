@@ -11,6 +11,7 @@ function showSubcategory(str) {
 
 
 function showsubcat(str) {
+    // alert();
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -31,10 +32,9 @@ function show_product(str) {
             document.getElementById("productdiv").innerHTML = this.responseText;
         }
     };
-    if(str=='') {
+    if (str == '') {
         xmlhttp.open("GET", "getproduct.php", true);
-    }else
-    {
+    } else {
         xmlhttp.open("GET", "getproduct.php?q=" + str, true);
     }
     xmlhttp.send();

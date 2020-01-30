@@ -39,7 +39,7 @@ include_once "adminheader.php";
             </div>
 
         </div>
-        <div class="col-sm-6" id="subcat">
+        <div class="col-sm-6" id="subcategory">
             <div class="row">
                 <div class="col-sm-4">
                     <label for="subcategory" class="">Sub Category</label>
@@ -58,7 +58,9 @@ include_once "adminheader.php";
     <div class="table-responsive" id="productdiv">
 
     </div>
-    <div class="row form-group col-md-8 justify-content-center offset-2">
+</div>
+
+<div class="row form-group col-md-8 justify-content-center offset-2">
         <?php
         if (isset($_REQUEST['er'])) {
             $val = $_REQUEST['er'];
@@ -92,7 +94,6 @@ include_once "adminheader.php";
             show_product('');
         })
     </script>
-</div>
 </body>
 </html>
 <?php

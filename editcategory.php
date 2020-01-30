@@ -39,7 +39,7 @@ $row = mysqli_fetch_assoc($result);
             <textarea name="categorydescription" id="categorydescription" data-rule-required="true"
                       data-msg-required="Description must be entered" class="input-field" cols="20" rows="5"
                       placeholder="enter category description "
-                      value=""><?php echo "$row[categorydescription]"; ?></textarea>
+                      ><?php echo "$row[categorydescription]"; ?></textarea>
         </div>
         <div class="row form-group col-md-8 justify-content-center offset-2">
             <input type="submit" value="submit" class="btn btn-success">

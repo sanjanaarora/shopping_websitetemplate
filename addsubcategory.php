@@ -13,8 +13,8 @@
     ?>
 </head>
 <body>
-<div class="container" style="background-color: #003eff">
-    <div class="row jumbotron justify-content-center">
+<div class="container" style="">
+    <div class="row justify-content-center">
         <h1>Add Sub Category</h1>
     </div>
     <form action="addsubcategoryaction.php" method="post" id="form1">

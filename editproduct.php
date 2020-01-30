@@ -41,7 +41,7 @@ $row = mysqli_fetch_array($result);
                             while ($category = mysqli_fetch_assoc($res)) {
                                 ?>
                                 <option value="<?php echo $category["categoryname"]; ?>"
-                                        <?php if (isset($row['category']) == $category['categoryname'])   { ?>selected<?php } ?>><?php echo $category["categoryname"]; ?></option>
+                                        <?php if (($row['category']) == $category['categoryname'])   { ?>selected<?php } ?>><?php echo $category["categoryname"]; ?></option>
                                 <?php
                             }
                             ?>

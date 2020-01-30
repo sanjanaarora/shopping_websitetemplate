@@ -30,12 +30,16 @@ include_once 'userheader.php';
         </thead>
         <tbody>
         <?php
+        $status ="";
+        $bill = 0;
         $k = 0;
         $billid = $_GET["q"];
         $sql = "SELECT * FROM `bill_detail` INNER JOIN bill on bill_detail.billid = bill.id INNER JOIN product ON bill_detail.productid=product.productid where billid='$billid'";
         $result = mysqli_query($conn, $sql);
         while ($detail = mysqli_fetch_array($result)) {
             $k++;
+            $status = $detail["status"];
+            $bill = $detail["billid"];
             ?>
             <tr>
                 <td><?php echo $k; ?></td>
@@ -50,8 +54,23 @@ include_once 'userheader.php';
             <?php
         }
         ?>
+
         </tbody>
+
     </table>
+    <?php
+    if ($status != "pending") {
+
+    } else {
+        ?>
+        <div class="row justify-content-center">
+            <h1 class=""><a href="cancelorder.php?q=<?php echo $bill; ?>&r=<?php echo $detail["quantity"]; ?>">Cancel
+                    Order &times;</a></h1>
+        </div>
+        <?php
+    }
+    ?>
+
     <?php
     include_once 'footer.php';
     ?>

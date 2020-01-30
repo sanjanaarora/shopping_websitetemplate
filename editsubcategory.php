@@ -18,8 +18,9 @@ $result = mysqli_query($conn, $s);
 $row = mysqli_fetch_array($result);
 ?>
 <body>
-<div class="container" style="background-color: #003eff">
-    <div class="row jumbotron justify-content-center">
+<div class="container">
+    <div class="row
+     justify-content-center">
         <h1>Edit Sub Category</h1>
     </div>
     <form action="updatesubcategory.php" method="post" id="form1">
@@ -35,7 +36,7 @@ $row = mysqli_fetch_array($result);
                     ?>
 
                     <option value="<?php echo $category["categoryname"]; ?>"
-                            <?php if (isset($row['category']) == $category['categoryname'])   { ?>selected<?php } ?>><?php echo $category["categoryname"]; ?></option>
+                            <?php if (($row['category']) == $category['categoryname'])   { ?>selected<?php } ?>><?php echo $category["categoryname"]; ?></option>
                     <?php
                 }
                 ?>

@@ -8,8 +8,8 @@ $qury = "UPDATE `category` SET `categorydescription`='$catdescription' WHERE `ca
 echo $qury;
 if (mysqli_query($conn, $qury)) {
     echo "Update Success";
-    header("location:showcategory");
+    header("location:showcategory.php");
 } else {
     echo "Update Failed";
-    header("location:showcategory");
+    header("location:showcategory.php");
 }

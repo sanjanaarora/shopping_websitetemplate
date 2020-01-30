@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="row jumbotron justify-content-center">
+    <div class="row justify-content-center">
         <h1>Add Category</h1>
     </div>
     <form action="insertcategory.php" method="post" id="form1">
@@ -36,13 +36,19 @@
     if (isset($_REQUEST['er'])) {
         $val = $_REQUEST['er'];
         if ($val == 1) {
-            echo '<div class="alert alert-danger">
+            echo '<div class="alert alert-success">
              Category added Successfully   
              <span class="close" data-dismiss="alert">&times;</span>
              </div>';
         } elseif ($val == 2) {
-            echo '<div class="alert alert-success">
+            echo '<div class="alert alert-danger">
             Category insert failed
+            <span class="close" data-dismiss="alert">&times;</span>
+            </div>';
+        }
+        elseif ($val == 0) {
+            echo '<div class="alert alert-info">
+            Category Already exist
             <span class="close" data-dismiss="alert">&times;</span>
             </div>';
         }

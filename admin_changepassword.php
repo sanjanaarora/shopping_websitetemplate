@@ -76,6 +76,12 @@ include "adminheader.php";
                         <span class="close" data-dismiss="alert">&times;</span>
                             </div>';
         }
+        if ($val == 3) {
+            echo '<div class="alert alert-danger">
+                        Old Password does not match
+                        <span class="close" data-dismiss="alert">&times;</span>
+                            </div>';
+        }
     }
 
     include_once 'footer.php';

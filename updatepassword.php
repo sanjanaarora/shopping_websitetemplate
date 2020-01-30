@@ -20,3 +20,7 @@ if (mysqli_num_rows($result) > 0) {
         header("location:admin_changepassword.php?er=2");
     }
 }
+else{
+    header("location:admin_changepassword.php?er=3");
+
+}

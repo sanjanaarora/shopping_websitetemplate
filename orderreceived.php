@@ -28,9 +28,9 @@ include_once 'adminheader.php';
             <input type="text" name="person" id="person" class="form-control">
         </div>
         <div class="row col-sm-6 justify-content-end mt-4">
-            <input type="hidden" value="<?php echo $billid; ?>" class="form-control" name="billid" id="billid">
-            <input type="hidden" value="<?php echo $fullname; ?>" class="form-control" name="fullname" id="fullname">
-            <input type="hidden" value="<?php echo $mobile; ?>" class="form-control" name="mobile" id="mobile">
+            <input type="text" value="<?php echo $billid; ?>" class="form-control" name="billid" id="billid">
+            <input type="text" value="<?php echo $fullname; ?>" class="form-control" name="fullname" id="fullname">
+            <input type="text" value="<?php echo $mobile; ?>" class="form-control" name="mobile" id="mobile">
 
             <input type="submit" name="" id="" value="Add" class="w-50 h-100 btn btn-success text-primary">
         </div>

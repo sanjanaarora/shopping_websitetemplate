@@ -24,6 +24,7 @@ include_once 'userheader.php';
         </div>
         <div class="row col-sm-8">
             <input type="hidden" value="<?php echo $_GET['q'];?>" id="billid" class="form-control" name="billid">
+            <input type="hidden" value="<?php echo $_GET['r'];?>" id="qty" class="form-control" name="qty">
             <input type="text" id="remarks" data-rule-required="true" class="form-control" name="remarks">
         </div>
         <div class="row mt-4 justify-content-center">

@@ -12,5 +12,5 @@ if (mysqli_num_rows($result)>0){
 }
 else
 {
-    header("location:loginpage.php?msg=invalid username or password");
+    header("location:loginpage.php?er=4");
 }

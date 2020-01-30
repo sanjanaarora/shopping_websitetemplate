@@ -6,26 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script>
-        function abc() {
-            alert("hello");
-            var email = document.getElementById("email").value;
-            var username = document.getElementById("username").value;
-            if (email == "" || username == "") {
-                alert("all fields are require ");
-            }
-        }
-    </script>
     <?php
     include 'headerfiles.html';
     ?>
 </head>
 <body>
+<?php
+include_once 'adminheader.php';
+?>
 <div class="container">
     <form action="insertadmin.php" method="post" id="form1" enctype="multipart/form-data">
         <div class="row ml-3 justify-content-center">
             <div class="input-containder">
-                <h1 class="text-danger input-field">Sign Up</h1>
+                <h1 class="text-danger input-field">Add Admin</h1>
             </div>
         </div>
 
@@ -107,14 +100,30 @@
 
     </form>
     <?php
-    if (isset($_REQUEST["msg"])) {
-        $msg = $_REQUEST["msg"];
-        echo "$msg";
+    if (isset($_REQUEST['er'])) {
+        $val = $_REQUEST['er'];
+        if ($val == 1) {
+            echo '<div class="alert alert-success">
+             Admin added Successfully   
+             <span class="close" data-dismiss="alert">&times;</span>
+             </div>';
+        } elseif ($val == 2) {
+            echo '<div class="alert alert-danger">
+            Admin insert failed
+            <span class="close" data-dismiss="alert">&times;</span>
+            </div>';
+        }
+        elseif ($val == 0) {
+            echo '<div class="alert alert-info">
+            Admin Already exist
+            <span class="close" data-dismiss="alert">&times;</span>
+            </div>';
+        }
     }
-    ?>
-    <?php
+
     include_once 'footer.php';
     ?>
+
 </div>
 </body>
 </html>

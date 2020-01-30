@@ -43,7 +43,7 @@ include_once 'adminheader.php';
                 </div>
 
             </div>
-            <div class="col-sm-6" id="subcat">
+            <div class="col-sm-6" id="subcategory">
                 <div class="row">
                     <div class="col-sm-4">
                         <label for="subcategory" class="">Sub Category</label>
@@ -178,6 +178,8 @@ include_once 'adminheader.php';
         }
         ?>
     </div>
+    <br>
+    <br>
     <?php
     include_once 'footer.php';
     ?>

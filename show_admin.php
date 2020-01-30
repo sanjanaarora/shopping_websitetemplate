@@ -20,11 +20,11 @@
         <tr>
             <th>User Name</th>
             <th>Email_id</th>
-            <th>Password</th>
             <th>Mobile</th>
             <th>Fullname</th>
-            <th>Delete</th>
             <th>Update</th>
+            <th>Delete</th>
+
         </tr>
         </thead>
         <tbody>
@@ -36,11 +36,21 @@
             <tr>
                 <td><?php echo $admin[0]; ?></td>
                 <td><?php echo $admin[1]; ?></td>
-                <td><input type="password" id="password" readonly value="<?php echo $admin[2]; ?>"></td>
                 <td><?php echo $admin[3]; ?></td>
                 <td><?php echo $admin[4]; ?></td>
-                <td><a href="deleteadmin.php?username=<?php echo $admin[0]; ?>"><i class="fa fa-trash"></i></a></td>
                 <td><a href="editadmin.php?username=<?php echo $admin[0]; ?>"><i class="fa fa-user-edit"></i></a></td>
+
+                <?php
+                if ($admin[0] ==$username ){
+
+                }
+                else{
+                    ?>
+                    <td><a href="deleteadmin.php?username=<?php echo $admin[0]; ?>"><i class="fa fa-trash"></i></a></td>
+
+                    <?php
+                }
+                ?>
             </tr>
             <?php
 

@@ -37,7 +37,7 @@
                 <td><?php echo $k ?></td>
                 <td><?php echo $category[0]; ?></td>
                 <td><?php echo $category[1]; ?></td>
-                <td><a href="deletecategory.php?catname=<?php echo $category[0]; ?>"><i class="fa fa-trash"></i></a></td>
+                <td><a onclick="return confirm('Are you Sure you want to Delete?')" href="deletecategory.php?catname=<?php echo $category[0]; ?>"><i class="fa fa-trash"></i></a></td>
                 <td><a href="editcategory.php?catname=<?php echo $category[0]; ?>"><i class="fa fa-edit"></i></a></td>
             </tr>
             <?php
